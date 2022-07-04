@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ### Primary */
+
+  --BrightBlue: hsl(220, 98%, 61%);
+  --CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* ### Neutral */
+
+  /* ### Light Theme */
+
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  /* ### Dark Theme */
+
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlue: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+}
+
+body {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main {
+  background: url(images/bg-desktop-light.jpg) no-repeat;
+  background-size: 100%;
+  background-color: var(--VeryLightGrayishBlue);
+  min-height: 100vh;
+}
+
+.header {
+  color: var(--VeryLightGray);
+  align-items: center;
+  text-align: center;
+  padding: 2rem 8rem;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.title-container h1 {
+  letter-spacing: 0.5rem;
+}
+
+.icon-swich {
+  cursor: pointer;
+}
+
+.form {
+  margin: 1rem 0;
+  border: none;
+  min-width: 800px;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  color: var(--VeryDarkGrayishBlue);
+  background-color: var(--VeryLightGray);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+}
+
+.todo-list {
+  min-height: 200px;
+  width: 800px;
+  margin: auto;
+  background-color: var(--VeryLightGray);
+  border-radius: 5px;
+  padding: 2rem 3rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--VeryDarkGrayishBlue);
+  border-bottom: 1px solid var(--LightGrayishBlue);
+  cursor: pointer;
+}
+
+.todo-item img {
+  cursor: pointer;
+}
+
+p {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.footer {
+  padding: 2rem 3rem;
+  margin: auto;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: var(--VeryDarkGrayishBlue);
+  background-color: var(--VeryLightGray);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.todo-text {
+  text-decoration: none;
+}
+
+.todo-complete {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+}
