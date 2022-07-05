@@ -27,9 +27,7 @@
   --VeryDarkBlue: hsl(235, 21%, 11%);
   --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
   --LightGrayishBlue: hsl(234, 39%, 85%);
-  --LightGrayishBlue: hsl(236, 33%, 92%);
   --DarkGrayishBlue: hsl(234, 11%, 52%);
-  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
   --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
 }
 
@@ -38,10 +36,19 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-main {
+.main {
+  transition: 0.5s;
   background: url(images/bg-desktop-light.jpg) no-repeat;
   background-size: 100%;
   background-color: var(--VeryLightGrayishBlue);
+  min-height: 100vh;
+}
+
+.main.dark {
+  transition: 0.5s;
+  background: url(images/bg-desktop-dark.jpg) no-repeat;
+  background-size: 100%;
+  background-color: var(--VeryDarkDesaturatedBlue);
   min-height: 100vh;
 }
 
@@ -49,10 +56,11 @@ main {
   color: var(--VeryLightGray);
   align-items: center;
   text-align: center;
-  padding: 2rem 8rem;
+  padding: 2rem 2rem;
 }
 
 .title-container {
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,15 +77,27 @@ main {
 }
 
 .form {
-  margin: 1rem 0;
   border: none;
-  min-width: 800px;
+  width: 800px;
   padding: 1rem 3rem;
   border-radius: 5px;
   color: var(--VeryDarkGrayishBlue);
   background-color: var(--VeryLightGray);
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
+  transition: 0.5s;
+}
+
+.form.dark {
+  border: none;
+  width: 800px;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  color: var(--VeryDarkGrayishBlue);
+  background-color: var(--VeryDarkGrayishBlue);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  transition: 0.5s;
 }
 
 .todo-list {
@@ -85,8 +105,19 @@ main {
   width: 800px;
   margin: auto;
   background-color: var(--VeryLightGray);
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   padding: 2rem 3rem;
+  transition: 0.5s;
+}
+
+.todo-list.dark {
+  min-height: 200px;
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--VeryDarkGrayishBlue);
+  border-radius: 5px 5px 0 0;
+  padding: 2rem 3rem;
+  transition: 0.5s;
 }
 
 .todo-item {
@@ -98,8 +129,23 @@ main {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
   color: var(--VeryDarkGrayishBlue);
+  border-bottom: 1px solid var(--VeryDarkGrayishBlue);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.todo-item.dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--LightGrayishBlue);
   border-bottom: 1px solid var(--LightGrayishBlue);
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .todo-item img {
@@ -114,19 +160,29 @@ p {
 .footer {
   padding: 2rem 3rem;
   margin: auto;
-  width: 800px;
+  max-width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
   color: var(--VeryDarkGrayishBlue);
   background-color: var(--VeryLightGray);
+  border-radius: 0 0 5px 5px;
+  transition: 0.5s;
 }
 
-.options {
+.footer.dark {
+  padding: 2rem 3rem;
+  margin: auto;
+  max-width: 800px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  font-size: 18px;
+  color: var(--DarkGrayishBlue);
+  background-color: var(--VeryDarkGrayishBlue);
+  border-radius: 0 0 5px 5px;
+  transition: 0.5s;
 }
 
 .todo-text {
@@ -136,4 +192,101 @@ p {
 .todo-complete {
   text-decoration: line-through;
   color: var(--DarkGrayishBlue);
+}
+
+/* Responsive */
+
+@media (max-width: 950px) {
+  .main {
+    background: url(images/bg-mobile-light.jpg) no-repeat;
+    background-size: contain;
+  }
+
+  .main.dark {
+    background: url(images/bg-mobile-dark.jpg) no-repeat;
+    background-size: contain;
+  }
+
+  .title-container {
+    max-width: 600px;
+  }
+
+  .form {
+    width: 600px;
+  }
+
+  .form.dark {
+    width: 600px;
+  }
+
+  .todo-list {
+    width: 600px;
+  }
+
+  .todo-list.dark {
+    max-width: 600px;
+  }
+
+  .footer {
+    max-width: 600px;
+  }
+
+  .footer.dark {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main {
+    background: url(images/bg-mobile-light.jpg) no-repeat;
+    background-size: contain;
+    background-color: var(--VeryLightGrayishBlue);
+  }
+
+  .main.dark {
+    background: url(images/bg-mobile-dark.jpg) no-repeat;
+    background-size: contain;
+    background-color: var(--VeryDarkDesaturatedBlue);
+  }
+
+  .title-container {
+    max-width: 300px;
+  }
+
+  .form {
+    width: 300px;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .form.dark {
+    width: 300px;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .todo-list {
+    width: 300px;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .todo-list.dark {
+    width: 300px;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    max-width: 300px;
+    padding: 1rem 1rem;
+  }
+
+  .footer.dark {
+    max-width: 300px;
+    padding: 1rem 1rem;
+  }
+  p {
+    font-size: 14px;
+  }
 }

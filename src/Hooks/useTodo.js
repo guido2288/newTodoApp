@@ -43,6 +43,15 @@ export const useTodo = () => {
     });
   }
 
+  const clearCompleted = (todo) => {
+    const action = {
+      type: 'Clear Completed',
+      payload: todo
+    }
+
+    dispatch(action)
+  }
+
 
   const todosPending = todos.filter(todo => !todo.done).length
 
@@ -51,6 +60,7 @@ export const useTodo = () => {
     handleNewTodo,
     handleDeleteTodo,
     handleToggleTodo,
-    todosPending
+    todosPending,
+    clearCompleted
   }
 }

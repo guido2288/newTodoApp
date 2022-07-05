@@ -1,10 +1,10 @@
 import { TodoItem } from "./TodoItem"
 
 
-export const TodoList = ({ todos = [], onDeleteTodo, onToggleTodo }) => {
+export const TodoList = ({ todos = [], onDeleteTodo, onToggleTodo, theme }) => {
 
   return (
-    <ul className="todo-list">
+    <ul className={`todo-list ${theme}`}>
       {
         todos.map(todo => (
           <TodoItem
@@ -12,6 +12,7 @@ export const TodoList = ({ todos = [], onDeleteTodo, onToggleTodo }) => {
             todo={todo}
             onDeleteTodo={onDeleteTodo}
             onToggleTodo={onToggleTodo}
+            theme={theme}
           />
         ))
       }

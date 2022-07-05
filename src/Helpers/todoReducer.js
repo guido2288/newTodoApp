@@ -19,6 +19,12 @@ export const todoReducer = (initialState = [], action) => {
         return todo;
       });
 
+    case 'Clear Completed':
+      return initialState.filter(todo => !todo.done)
+
+    case 'Show All':
+      return initialState
+
     default:
       return initialState;
   }

@@ -1,7 +1,7 @@
 import { useForm } from "../Hooks/useForm"
 
 
-export const TodoAdd = ({ onNewTodo }) => {
+export const TodoAdd = ({ onNewTodo, theme }) => {
 
   const { description, onInputChange, onResetForm } = useForm({
     description: ''
@@ -27,7 +27,7 @@ export const TodoAdd = ({ onNewTodo }) => {
       <input
         type="text"
         placeholder="Create a new todo..."
-        className="form"
+        className={`form ${theme}`}
         name="description"
         value={description}
         onChange={onInputChange}

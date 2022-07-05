@@ -1,9 +1,9 @@
 import cross from '../images/icon-cross.svg';
 
-export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
+export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo, theme }) => {
 
   return (
-    <li className="todo-item">
+    <li className={`todo-item ${theme}`}>
       <span
         className={`todo-text ${(todo.done) ? 'todo-complete' : ''}`}
         onClick={() => onToggleTodo(todo.id)}
