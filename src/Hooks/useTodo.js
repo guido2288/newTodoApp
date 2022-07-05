@@ -6,10 +6,12 @@ const initialState = [];
 
 const init = () => {
 
+  try {
+    return JSON.parse(localStorage.getItem('todos')) || [];
 
-  return JSON.parse(localStorage.getItem('todos')) || [];
-
-
+  } catch (err) {
+    console.log('error', err)
+  }
 };
 
 
