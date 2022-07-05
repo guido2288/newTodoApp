@@ -5,7 +5,10 @@ import { todoReducer } from "../Helpers/todoReducer";
 const initialState = [];
 
 const init = () => {
-  return JSON.parse(sessionStorage.getItem('todos') || [])
+
+  return JSON.parse(localStorage.getItem('todos'))
+
+
 };
 
 
@@ -15,7 +18,7 @@ export const useTodo = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
   useEffect(() => {
-    sessionStorage.setItem('todos', JSON.stringify(todos))
+    localStorage.setItem('todos', JSON.stringify(todos))
 
   }, [todos])
 
