@@ -6,7 +6,11 @@ const initialState = [];
 
 const init = () => {
 
-  return JSON.parse(localStorage.getItem('todos'))
+
+
+  if (JSON.parse(localStorage.getItem('todos')) !== '') {
+    return JSON.parse(localStorage.getItem('todos'))
+  }
 
 
 };
