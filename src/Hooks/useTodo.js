@@ -6,12 +6,11 @@ const initialState = [];
 
 const init = () => {
 
-  try {
-    return JSON.parse(localStorage.getItem('todos')) || [];
+  console.log(localStorage.getItem('todos'))
 
-  } catch (err) {
-    console.log('error', err)
-  }
+  return JSON.parse(localStorage.getItem('todos')) || [];
+
+
 };
 
 
@@ -22,6 +21,7 @@ export const useTodo = () => {
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
+
 
   }, [todos])
 
